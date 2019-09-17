@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>관리자 웹 페이지</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+     <script src="vendor/jquery/jquery.min.js"></script>
+<script>
+        $(document).ready(function(){
+            
+        })
+        
+</script>    
+      <script src="/vendor/jquery/jquery.min.js"></script>
+    <link href="/css/shop-item.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">관리자 웹 페이지</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../adminMain">사용자 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../adminMain2">매장 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">로그 아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+          <h1 class="my-4" id="username">관리자님</h1>
+          <div class="list-group">
+            <a href="../adminMain" class="list-group-item active">사용자 관리</a>
+            <a href="../adminMain2" class="list-group-item">매장관리</a>
+           
+          </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+        <div>    
+        <br>
+
+        <form class="form-inline my-2 my-lg-0" id="search" method="get" action="/search?:key">
+      <input class="form-control mr-sm-2" type="text" name="key" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form></div>
+        <table class="table table-hover">
+  
+   
+  
+   <thead>
+    <tr>
+      <th scope="col">고객 번호</th>
+      <th scope="col">고객명</th>
+      <th scope="col">고객 아이디</th>
+      <th scope="col">고객 비밀번호</th>
+      <th scope="col">이메일 주소</th>
+      <th scope="col">관리</th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+   <% data.forEach(function(item,index){ %>
+    <tr>
+        <td><%=item.CustomerNo %></td>
+        <td><%=item.CusName %></td>
+        <td><%=item.Id %></td>
+        <td><%=item.Password %></td>
+        <td><%=item.Email %></td>
+        <td><a href="/update/<%=item.Id %>">수정</a>
+            <a href="/delete/<%=item.Id %>">삭제</a>
+</td>
+    </tr>
+    <% })%>
+  </tbody>
+    
+
+</table>
+     
+<div class="container">
+<ul class="pager">
+
+
+
+<%
+var curSet = pasing.curSet
+var endPage = pasing.endPage
+var startPage = pasing.startPage
+var totalSet = pasing.totalSet
+var totalPage = pasing.totalPage
+var page_list_size = pasing.page_list_size
+var page_size = pasing.page_size
+var curPage = pasing.curPage
+%>
+
+
+<%
+if(curSet > 1){
+%>
+
+<li value=(startPage -1) class="previous">
+<a href='/pasing/<%= ( startPage - 1) %>'>이전페이지</a>
+</li>
+
+<%
+}
+%>
+
+
+<%
+for(var i = startPage; i <= endPage; i++){
+if(i > totalPage){break;}
+
+if(i == curPage){
+%>
+<li value=<%= i %> >
+<a href='/pasing/<%= i %>'>
+<%= i %>
+</a>
+</li>
+
+<%
+}else{
+%>
+
+<li value=<%= i %> >
+<a href='/pasing/<%= i %>'>
+<%= i %>
+</a>
+</li>
+
+
+<%
+}
+%>
+
+<%
+}
+%>
+
+<%
+if(curSet < totalSet){
+%>
+<li value=( endPage + 1) class="next">
+<a href='/pasing/<%= ( endPage + 1) %>'>다음페이지</a>
+</li>
+<%
+}
+%>
+
+</ul>
+</div>
+
+<br>
+<br>
+         
+    
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <div id="test">
+        
+    </div>
+
+  </body>
+
+</html>

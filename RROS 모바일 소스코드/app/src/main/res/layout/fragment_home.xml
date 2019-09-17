@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/bg_default"
+        android:nestedScrollingEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ViewFlipper
+                android:id="@+id/flipper"
+                android:layout_width="400dp"
+                android:layout_height="140dp">
+
+
+                <ImageView
+                    android:id="@+id/img01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img01"
+                    android:scaleType="centerCrop"/>
+
+
+                <ImageView
+
+                    android:id="@+id/img02"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img02"
+                    android:scaleType="centerCrop"/>
+
+
+                <ImageView
+                    android:id="@+id/img03"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img03"
+                    android:scaleType="centerCrop"/>
+
+            </ViewFlipper>
+
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_default"
+                android:paddingLeft="10dp"
+                android:text="베스트"
+                android:textColor="@color/colorPrimary" />
+
+            <ListView
+                android:id="@+id/c1listView"
+                android:layout_width="match_parent"
+                android:layout_height="369dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@color/bg_default"
+                android:divider="@color/bg_default"
+                android:dividerHeight="3dp"
+                android:scrollbars="horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_default"
+                android:paddingLeft="10dp"
+                android:text="시원한 음료가 있는"
+                android:textColor="@color/colorPrimary" />
+
+            <ListView
+                android:id="@+id/c2listView"
+                android:layout_width="match_parent"
+                android:layout_height="369dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:divider="@color/bg_default"
+                android:dividerHeight="3dp"
+                android:scrollbars="horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_default"
+                android:paddingLeft="10dp"
+                android:text="오픈했어요"
+                android:textColor="@color/colorPrimary" />
+
+
+            <ListView
+                android:id="@+id/c3listView"
+                android:layout_width="match_parent"
+                android:layout_height="369dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:divider="@color/bg_default"
+                android:dividerHeight="3dp"
+                android:scrollbars="horizontal" />
+
+            <TextView
+                android:id="@+id/padding"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="TextView" />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

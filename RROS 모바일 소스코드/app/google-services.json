@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "130833944569",
+    "firebase_url": "https://algoing-beacon.firebaseio.com",
+    "project_id": "algoing-beacon",
+    "storage_bucket": "algoing-beacon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130833944569:android:717bae835987f419",
+        "android_client_info": {
+          "package_name": "tpgus.example.com.rros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130833944569-qqstr8ufmlipae8tgbf27hesurnlt7lc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGC9AOQyZKUTH4j_9Apu46sJ_2mfxh1AI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
